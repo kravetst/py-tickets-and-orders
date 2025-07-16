@@ -63,7 +63,7 @@ class Order(models.Model):
         on_delete=models.CASCADE
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Order: {self.created_at}"
 
     class Meta:
@@ -105,7 +105,7 @@ class Ticket(models.Model):
         self.full_clean()
         super().save(*args, **kwargs)
 
-    def __str__(self):
+    def __str__(self) -> str:
         return (
             f"Ticket: {self.movie_session.movie.title} "
             f"{self.movie_session.show_time} "
