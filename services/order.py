@@ -20,7 +20,9 @@ def create_order(
             order.save()  # Зберегли дату
 
         for ticket in tickets:
-            movie_session = MovieSession.objects.get(id=ticket["movie_session"])
+            movie_session = MovieSession.objects.get(
+                id=ticket["movie_session"]
+            )
             Ticket.objects.create(
                 row=ticket["row"],
                 seat=ticket["seat"],
